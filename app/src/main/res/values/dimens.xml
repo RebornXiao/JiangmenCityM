@@ -1,0 +1,30 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <dimen name="button_height">45.0dip</dimen>
+    <dimen name="bottom_tab_font_size">16.0dip</dimen>
+    <dimen name="bottom_tab_padding_up">10.0dip</dimen>
+    <dimen name="bottom_tab_padding_drawable">2.0dip</dimen>
+
+
+    <dimen name="layout_marginLeft">5dp</dimen>
+    <dimen name="paddingBottom">15dp</dimen>
+    <dimen name="paddingLeft">10dp</dimen>
+    <dimen name="paddingTop">15dp</dimen>
+    <dimen name="textSize">16dp</dimen>
+    <dimen name="layout_height">0.5dp</dimen>
+    <dimen name="layout_marginRight">5dp</dimen>
+    <!-- Dialog. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="bbuton_rounded_corner_radius">5dp</dimen>
+
+    <dimen name="drop_down_list_footer_progress_bar_height">36dp</dimen>
+    <dimen name="drop_down_list_header_progress_bar_height">36dp</dimen>
+    <dimen name="drop_down_list_footer_font_size">14sp</dimen>
+
+    <dimen name="listview_scrollbar_width">2dp</dimen>
+
+    <dimen name="slidingmenu_offset">60dp</dimen>
+    <dimen name="shadow_width">15dp</dimen>
+</resources>

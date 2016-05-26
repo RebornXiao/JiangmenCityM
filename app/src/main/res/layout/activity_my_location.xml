@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/bg_color">
+
+    <RelativeLayout
+        android:id="@+id/rl_main_title"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        >
+
+        <ImageView
+            android:id="@+id/btn_go_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/avatar"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="江门市"
+            android:textColor="@color/register_un"
+            android:textSize="17sp"/>
+    </RelativeLayout>
+
+    <RadioGroup
+        android:id="@+id/rg_main"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/black"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_position"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/red"
+            android:gravity="center"
+            android:text="我的位置"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/tv_search"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="搜索"
+            android:textColor="@color/bg_color"/>
+
+        <TextView
+            android:id="@+id/tv_nearby"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="周边"
+            android:textColor="@color/bg_color"/>
+
+        <TextView
+            android:id="@+id/tv_navi"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="导航"
+            android:textColor="@color/bg_color"/>
+
+    </RadioGroup>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_search_all"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@+id/rl_main_title"
+        android:clickable="true"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/ll_city"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="在江门">
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="市内找">
+            </TextView>
+
+            <AutoCompleteTextView
+                android:id="@+id/searchkey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.88"
+                android:text="餐厅"
+                android:textSize="13sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_data"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/ll_city"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="12"
+                android:onClick="searchButtonProcess_start"
+                android:text="开始"
+                android:textColor="@color/register_un"/>
+
+            <Button
+                android:id="@+id/map_next_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="12"
+                android:onClick="goToNextPage"
+                android:text="下一组数据"
+                android:textColor="@color/register_un"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/rl_route_all"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_main_title"
+        android:layout_above="@+id/rg_main"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <include layout="@layout/layout_zhoubian"/>
+    </LinearLayout>
+
+    <com.baidu.mapapi.map.MapView
+        android:id="@+id/bmapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rg_main"
+        android:layout_below="@+id/rl_search_all"
+        android:clickable="true"
+        android:visibility="visible"/>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_navi_choose"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/rg_main"
+        android:layout_below="@+id/rl_main_title"
+        android:visibility="gone">
+
+        <include layout="@layout/layout_chose_navi"/>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

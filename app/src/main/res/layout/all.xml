@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/all"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#181818">
+
+    <fragment
+        android:id="@+id/left_fragment"
+        android:name="com.liqi.fragment.LeftFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        />
+</RelativeLayout>

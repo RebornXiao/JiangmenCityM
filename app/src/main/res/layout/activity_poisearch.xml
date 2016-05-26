@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/bg_color"
+              android:gravity="center_horizontal"
+              android:orientation="vertical"
+    >
+
+    <RelativeLayout
+        android:id="@+id/rl_my_search"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/bg_color"
+        >
+
+        <ImageView
+            android:id="@+id/btn_go_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingBottom="12dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="12dp"
+            android:src="@drawable/arrow_return"/>
+
+        <TextView
+            android:id="@+id/tv_go_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/btn_go_back"
+            android:paddingBottom="5dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:text="返回"
+            android:textColor="@color/register_un"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="导航路线确认"
+            android:textColor="@color/title"
+            android:textSize="17sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/title_line"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/ll_city"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="在江门">
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="市内找">
+            </TextView>
+
+            <AutoCompleteTextView
+                android:id="@+id/searchkey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.88"
+                android:text="餐厅"
+                android:textSize="13sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_data"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/ll_city"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="12"
+                android:onClick="searchButtonProcess"
+                android:text="开始"
+                android:textColor="@color/register_un"/>
+
+            <Button
+                android:id="@+id/map_next_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="12"
+                android:onClick="goToNextPage"
+                android:text="下一组数据"
+                android:textColor="@color/register_un"/>
+        </LinearLayout>
+
+        <fragment
+            android:id="@+id/map"
+            class="com.baidu.mapapi.map.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ll_data"/>
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/tv_start_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="五邑大学"
+        android:textColor="@color/red"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/tv_start_position_gps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="22.5,122.44"
+        android:textColor="@color/red"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/tv_end_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="五邑大学三号楼"
+        android:textColor="@color/red"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/tv_end_position_gps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="22.8,113.22"
+        android:textColor="@color/red"
+        android:textSize="15sp"/>
+
+
+    <TextView
+        android:id="@+id/tv_start_navi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/shape_blue_white"
+        android:text="开始导航"
+        android:textColor="@color/register_un"/>
+
+</LinearLayout>
